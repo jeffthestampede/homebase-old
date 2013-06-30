@@ -1,4 +1,7 @@
 Homebase::Application.routes.draw do
+  resources :teams
+
+
   devise_for :users
 
   # The priority is based upon order of creation:
