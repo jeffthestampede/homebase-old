@@ -12,6 +12,15 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <div><%= f.label "Team 1 MLB" %>
+  <%= f.select(:team1, options_for_select((Team.where(:league => "mlb").map{|u| u.name}).sort)) %></div>
+
+  <div><%= f.label "Team 2 NBA" %>
+  <%= f.select(:team2, options_for_select((Team.where(:league => "nba").map{|u| u.name}).sort)) %></div>
+
+  <div><%= f.label "Team 3 NFL" %>
+  <%= f.select(:team3, options_for_select((Team.where(:league => "nfl").map{|u| u.name}).sort)) %></div>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

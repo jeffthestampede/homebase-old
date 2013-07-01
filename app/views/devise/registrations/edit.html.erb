@@ -16,6 +16,15 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <div><%= f.label "Team 1 MLB" %>
+  <%= f.select(:team1, options_for_select((Team.where(:league => "mlb").map{|u| u.name}).sort, :selected => "#{current_user.team1}")) %>
+
+  <div><%= f.label "Team 2 NBA" %>
+  <%= f.select(:team2, options_for_select((Team.where(:league => "nba").map{|u| u.name}).sort, :selected => "#{current_user.team2}")) %>
+
+  <div><%= f.label "Team 3 NFL" %>
+  <%= f.select(:team3, options_for_select((Team.where(:league => "nfl").map{|u| u.name}).sort, :selected => "#{current_user.team3}")) %>
+
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
